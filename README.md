@@ -2,6 +2,7 @@
 
 ## Systems Analysis and Design — Laboratory Exercise 3
 
+**Name:** JOVER L. SABARITA  
 **Course:** Systems Analysis and Design  
 **Section:** BSIT Section B  
 **Mode:** Individual  
