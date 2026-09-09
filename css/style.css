@@ -70,7 +70,9 @@ html {
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--bg-primary);
+  background: 
+    linear-gradient(rgba(6, 24, 14, 0.65), rgba(4, 18, 10, 0.78)),
+    url('../images/bg-login.jpg') center/cover no-repeat fixed;
   color: var(--text-primary);
   line-height: 1.6;
   min-height: 100vh;
@@ -120,19 +122,19 @@ h3 { font-size: 1.1rem; }
   position: relative;
   z-index: 1;
   background: 
-    linear-gradient(rgba(5, 20, 10, 0.75), rgba(5, 20, 10, 0.85)),
+    linear-gradient(rgba(6, 24, 14, 0.45), rgba(4, 18, 10, 0.58)),
     url('../images/bg-login.jpg') center/cover no-repeat;
 }
 
 .login-card {
   width: 100%;
   max-width: 420px;
-  background: var(--bg-card);
+  background: rgba(10, 24, 17, 0.88);
   backdrop-filter: blur(24px);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-xl);
   padding: 2.5rem;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
   animation: fadeInUp 0.6s var(--transition-slow);
 }
 
@@ -425,7 +427,8 @@ h3 { font-size: 1.1rem; }
 
 /* ----- Navigation Tabs ----- */
 .nav-tabs {
-  background: var(--bg-secondary);
+  background: rgba(10, 24, 17, 0.75);
+  backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-color);
   padding: 0 1.5rem;
   display: flex;
@@ -478,6 +481,87 @@ h3 { font-size: 1.1rem; }
 
 .tab-panel.active {
   display: block;
+}
+
+/* ============================================================
+   TAB HERO BANNERS (Dashboard, Equipment, Transactions)
+   ============================================================ */
+.tab-hero-banner {
+  position: relative;
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: 
+    linear-gradient(135deg, rgba(6, 26, 16, 0.72), rgba(4, 18, 10, 0.84)),
+    url('../images/bg-login.jpg') center/cover no-repeat;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.tab-hero-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-emerald), transparent);
+}
+
+.tab-hero-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.tab-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: var(--accent-emerald);
+  padding: 0.25rem 0.7rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.tab-hero-banner h2 {
+  font-size: 1.45rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+}
+
+.tab-hero-banner p {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.tab-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .tab-hero-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.25rem;
+    gap: 1rem;
+  }
 }
 
 /* ============================================================
