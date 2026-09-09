@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Equipment Borrowing and Return Monitoring System — Login">
+  <title>Login — Equipment Borrowing System</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/logo.png">
+</head>
+<body>
+
+  <div class="login-wrapper">
+    <div class="login-card">
+
+      <!-- Logo -->
+      <div class="logo">
+        <img src="images/logo.png" alt="ASSCAT Logo" style="width: 72px; height: 72px; margin: 0 auto 0.75rem; display: block; border-radius: 50%; object-fit: cover;">
+        <h1>Equipment Borrowing System</h1>
+        <p>Agusan del Sur State College of Agriculture and Technology</p>
+      </div>
+
+      <!-- Error Message -->
+      <div id="login-error" class="login-error"></div>
+
+      <!-- Login Form -->
+      <form id="login-form" autocomplete="on">
+        <div class="form-group">
+          <label for="login-email">Email Address</label>
+          <input
+            type="email"
+            id="login-email"
+            placeholder="Enter your email"
+            required
+            autocomplete="email"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input
+            type="password"
+            id="login-password"
+            placeholder="Enter your password"
+            required
+            autocomplete="current-password"
+          >
+        </div>
+
+        <button type="submit" id="login-btn" class="btn btn-primary btn-lg btn-block">
+          Sign In
+        </button>
+      </form>
+
+      <p style="text-align: center; margin-top: 1.5rem; font-size: 0.78rem; color: var(--text-muted);">
+        College Equipment Management System<br>
+        Systems Analysis and Design
+      </p>
+
+    </div>
+  </div>
+
+  <!-- Supabase CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- App Scripts -->
+  <script src="js/supabase.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    // Initialize login page
+    document.addEventListener('DOMContentLoaded', () => {
+      checkSession();
+      initLoginPage();
+    });
+  </script>
+
+</body>
+</html>
